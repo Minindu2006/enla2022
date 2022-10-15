@@ -1,0 +1,698 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
+* {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 10px;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid crimson;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.5s;
+}
+
+.myname h1 {
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+  color: white;
+}
+
+.myname h1 span {
+  font-size: 3rem;
+  color: crimson;
+}
+
+.button:hover {
+  background-color: crimson;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.logo {
+  height: 70px;
+  width: 150px;
+  border-radius: 10px;
+}
+p {
+  color: black;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.section-title span {
+  color: crimson;
+}
+
+/* Header CSS */
+#header {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+
+#header .header {
+  min-height: 8vh;
+  background-color: #0000003d;
+}
+
+#header .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+
+#header .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: #00000086;
+  width: 80vw;
+  height: 100vh;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+#header .nav-list ul.active {
+  left: 20%;
+}
+
+#header .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+}
+
+#header .nav-list ul a:hover {
+  color: crimson;
+}
+
+#header .menu-icon {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  border: 3px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  z-index: 2;
+}
+
+#header .menu-icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 3px solid white;
+  border-radius: 50%;
+  animation: menu_pulse 1s infinite;
+}
+
+#header .menu-icon .bar {
+  height: 2px;
+  width: 30px;
+  background-color: white;
+  position: relative;
+}
+
+#header .menu-icon .bar::before {
+  content: "";
+  height: 2px;
+  width: 30px;
+  background-color: white;
+  position: absolute;
+  bottom: 8px;
+  transition: 0.3s;
+}
+
+#header .menu-icon .bar::after {
+  content: "";
+  height: 2px;
+  width: 30px;
+  background-color: white;
+  position: absolute;
+  top: 8px;
+  transition: 0.3s;
+}
+
+#header .menu-icon.active .bar::before {
+  bottom: 0;
+}
+#header .menu-icon.active .bar::after {
+  top: 0;
+}
+
+/* Showcase CSS */
+
+#showcase {
+  background-image: url("./img/enla2.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  z-index: 1;
+}
+#showcase::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+#showcase .showcase {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+#showcase h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+#showcase h1:nth-child(1) {
+  animation-delay: 1s;
+}
+#showcase h1:nth-child(2) {
+  animation-delay: 2s;
+}
+#showcase h1:nth-child(3) {
+  animation: name_reveal 0.5s ease forwards;
+  animation-delay: 3s;
+}
+#showcase h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: crimson;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+#showcase h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+#showcase h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+#showcase h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+/* Services CSS */
+
+#services .services {
+  flex-direction: column;
+  text-align: center;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+#services .services-top {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#services .services-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+#services .services-item {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 100px;
+  border-radius: 10px;
+  background-size: cover;
+  margin: 50px 5px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+#pres {
+  background-image: url("./img/Manuga3.jpg");
+}
+#vpres {
+  background-image: url("./img/Uththara.jpg");
+}
+#sec {
+  background-image: url("./img/DSC_0682.jpg");
+}
+#vsec {
+  background-image: url("./img/Savindu.jpg");
+}
+#services .services-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+#services .services-item .icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+#services .services-item h2 {
+  font-size: 2rem;
+  color: white;
+  margin-top: 200px;
+  text-transform: uppercase;
+}
+
+#services .services-item p {
+  color: white;
+}
+
+/* Projects CSS */
+
+#projects .projects {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+#projects .projects-header h1 {
+  margin-bottom: 50px;
+}
+
+#projects .all-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#projects .project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#projects .project-info {
+  padding: 30px;
+  flex-basis: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  color: white;
+}
+
+#projects .project-info h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+#projects .project-info h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+#projects .project-info p {
+  color: white;
+}
+#projects .project-img {
+  flex-basis: 50%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+#projects .project-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+}
+
+#projects .project-img img {
+  transition: 0.5s ease;
+}
+
+#projects .project-item:hover .project-img img {
+  transform: scale(1.5);
+}
+
+/* About CSS */
+
+#about .about {
+  flex-direction: column-reverse;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+#about .col-left {
+  width: 250px;
+  height: 360px;
+}
+#about .col-right {
+  width: 100%;
+}
+#about .col-right h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+#about .col-right p {
+  margin-bottom: 10px;
+}
+
+#about .col-right .button {
+  color: black;
+  margin-bottom: 50px;
+}
+
+#about .col-left .about-img {
+  position: relative;
+  border: 8px solid white;
+  height: 100%;
+  width: 100%;
+}
+#about .col-left .about-img::after {
+  content: "";
+  position: absolute;
+  border: 8px solid crimson;
+  height: 100%;
+  width: 100%;
+  left: -33px;
+  top: 20px;
+  z-index: -1;
+}
+
+/* Contact CSS */
+#contact .contact {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
+}
+#contact .contact-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .contact-item {
+  width: 80%;
+  text-align: center;
+  padding: 30px;
+  margin: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px #969696;
+  transition: 0.5s;
+}
+#contact .contact-item:hover {
+  box-shadow: 0px 0px 30px 0 #969696;
+}
+
+#contact .icon {
+  width: 70px;
+  margin: 0 auto;
+}
+
+#contact .contact-info h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+#contact .contact-info h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 2rem;
+}
+#footer {
+  background-image: linear-gradient(60deg, #29323c 0%, #4b6a8b 100%);
+}
+#footer .footer {
+  min-height: 200px;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+#footer h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  margin: 10px 0px;
+}
+#footer .social-icons {
+  display: flex;
+}
+#footer .social-item {
+  height: 50px;
+  width: 50px;
+  margin: 0 5px;
+}
+#footer .social-item img {
+  filter: grayscale(1);
+  transition: 0.5s;
+}
+#footer .social-item:hover img {
+  filter: grayscale(0);
+}
+#footer p {
+  color: white;
+}
+#header .header.scroll {
+  background-color: #29323c;
+}
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes text_reveal {
+  100% {
+    color: white;
+  }
+}
+@keyframes name_reveal {
+  100% {
+    color: crimson;
+    font-weight: 700;
+  }
+}
+@keyframes menu_pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* Tablet mode */
+@media (min-width: 200px) {
+  .button {
+    font-size: 2.5rem;
+    padding: 20px 60px;
+  }
+  #showcase h1 {
+    font-size: 6rem;
+  }
+  h1.section-title {
+    font-size: 7rem;
+  }
+
+  #services .services-bottom .services-item {
+    flex-basis: 45%;
+    margin: 2.5%;
+  }
+  #projects .project-item {
+    flex-direction: row;
+    margin: 0;
+    border-radius: 0;
+    height: 400px;
+    width: 100%;
+  }
+  #projects .project-item .project-info {
+    height: 100%;
+  }
+  #projects .project-item .project-img {
+    height: 100%;
+  }
+  #projects .project-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  #about .about {
+    flex-direction: row;
+  }
+  #about .col-left {
+    width: 600px;
+    height: 400px;
+    padding-left: 60px;
+  }
+  #about .col-left .about-img::after {
+    border: 10px solid crimson;
+    height: 98%;
+    width: 98%;
+    left: -45px;
+    top: 34px;
+  }
+  #about .col-right {
+    text-align: left;
+    padding: 30px;
+  }
+  #about .col-right .button {
+    padding: 10px;
+  }
+  #about h1 {
+    text-align: left;
+  }
+  #contact .contact-items {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+  }
+}
+
+/* For Desktop mode */
+@media (min-width: 1200px) {
+  #header .menu-icon {
+    display: none;
+  }
+
+  #header .nav-list ul {
+    position: initial;
+    display: block;
+    background-color: transparent;
+    height: auto;
+    width: fit-content;
+  }
+
+  #header .nav-list ul li {
+    display: inline-block;
+  }
+  #header .nav-list ul li a {
+    font-size: 1.8rem;
+  }
+
+  #services .services-bottom .services-item {
+    flex-basis: 22%;
+    margin: 1.5%;
+  }
+  #about .col-right {
+    margin-left: 50px;
+  }
+  #contact .contact-item {
+    display: flex;
+    margin: 0;
+    width: 30%;
+    height: 100%;
+    align-items: center;
+  }
+  #contact .contact-item .icon {
+    width: 100px;
+    height: 100px;
+  }
+  #contact .contact-item .icon img {
+    object-fit: contain;
+  }
+  #contact .contact-item .contact-info {
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+  }
+}
